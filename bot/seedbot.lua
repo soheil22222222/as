@@ -24,7 +24,7 @@ function on_msg_receive (msg)
   if msg_valid(msg) then
     msg = pre_process_msg(msg)
     if msg then
-      match_plugins(msg)
+      match_plugins(msg).
       if redis:get("bot:markread") then
         if redis:get("bot:markread") == "on" then
           mark_read(receiver, ok_cb, false)
@@ -212,7 +212,7 @@ function create_config( )
   -- A simple config with basic plugins and ourselves as privileged user
   config = {
     enabled_plugins = {
-	"admin",
+    "admin",
     "onservice",
     "inrealm",
     "ingroup",
@@ -220,7 +220,7 @@ function create_config( )
     "banhammer",
     "stats",
     "anti_spam",
-    " antiArabic",
+    "antiArabic",
     "owners",
     "arabic_lock",
     "set",
@@ -232,8 +232,8 @@ function create_config( )
     "all",
     "time",
     "leave_ban",
-	"supergroup",
-	"whitelist",
+    "supergroup",
+    "whitelist",
     "ver",
     "me",
     "plugins",
